@@ -1,0 +1,30 @@
+ check cat /etc/passwd | tail -5,
+  cat - I know what it does,
+  etc folder where system files live
+  passwd file that list all users 
+  | is just pipeline, us side ka udhar lejata
+  tail -5 just means show just last 5 lines.
+- sudo adduser testuser
+  we know how sudo works, stands for SUpreme DOer.
+  adduser is simple, it adds user.
+  testuser is the name. 
+  it'll ask plethora of ques, you can skip just assign a pass.
+- su testuser
+  su is switch user 
+  it'll ask for pass and you're that user.
+- touch testfile.txt
+  echo "i am a testuser" > testfile.txt
+  cat testfile.txt
+  we all know how this works.
+- cat /home/hassam/devops-journey/linux/system-info.sh
+  it is asking to open something from other user and this shit will get denied permission. 
+- sudo ls /home/hassam
+  trying to be a peeping tom doesn't work if you don't  have sudo privilege, and your ass will be reported in logs. 
+- exit 
+  it will just exit the session. (when you change user from terminal it builts on top of the user you were before so it would exit this)
+- sudo passwd -l testuser
+  sudo as supreme being saying -l stands for locked so lock password access to this testuser guy
+  I tried logging in after that it won't allow me, authentication failed. 
+- sudo passwd -u testuser 
+  same thing but now -u stands for unlock and I can access again.
+  
