@@ -1,0 +1,19 @@
+permission test on /srv/webapp/share.txt
+
+I created three users, aeti, munna and khizu. 
+I created a group called family and added all of em.
+I created a file, share.txt
+I changed the file ownership of share.txt
+File ownership: khizran:family
+Permission: 640 = rw-r-----
+
+Tested as aetisam
+- can access it but can't overwrite or write, permission denied.
+reason, he's not the owner just a part of the group which can only read.
+
+Tested as wasam
+-same thing.
+
+permission order: owner -> group -> others
+Linux checks: are you the owner? Yes -> use owner perms. No -> are you in the group? Yes -> use the group perms. No -> use other perms.
+
