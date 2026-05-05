@@ -1,0 +1,8 @@
+commands used:
+- sudo adduser dev/tester/auditor: creates users with home dirs
+- sudo groupadd webteam : create group
+- sudo usermod -aG webteam dev: add dev to webteam without removing existing groups.
+  -a=append, -g=supplementary group
+- sudo mkdir -p /srv/webapp: creates shared dir
+
+Verification:
