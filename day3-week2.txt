@@ -1,0 +1,23 @@
+SUDOERS SYNTAX: 
+
+user host=(runas) command
+
+Example:
+wasam ALL=(ALL) NOPASSWD: /usr/bin/systemctl restart nginx
+
+Breakdown: 
+- wasam = user this applies to
+- ALL = on all hosts (matters if /etc/sudoers is synched across servers)
+- (ALL) = can execute as any user (usually means "as root")
+- NOPASSWD: = don't ask for password
+- /usr/bin/systemctl restart nginx = the specific command allowed 
+
+Why NOPASSWD matters: 
+- Allows automation (scripts can restart services without human input)
+- Dangerous if applied broadly (dev ALL=(ALL) NOPASSWD: ALL = dev is root with no checks)
+- Best practice: limit to specific commands only
+
+Real world use:
+- CI/CD pipelines restarting services after deploy
+- Monitoring scripts that need to check services status
+- Developers restarting their app without bothering ops team.
