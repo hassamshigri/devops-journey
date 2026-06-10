@@ -1,0 +1,6 @@
+echo "SYSTEM INFORMATION"
+echo "------------"
+echo "Username: $(whoami)"
+echo "Hostname: $(hostname)"
+echo "IP Address: $(ip addr show | 'inet ' | grep -v '127.0.0.1 | awk '{print $3}')"
+echo "Memory Usage: $(free -h | grep Mem | awk '{print $3/$2}'"
